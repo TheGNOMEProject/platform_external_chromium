@@ -1047,7 +1047,7 @@ size_t SpdyFramer::ProcessControlFramePayload(const char* data, size_t len) {
     // If this is a FIN, tell the caller.
     if (control_frame->type() == SYN_REPLY &&
         control_frame->flags() & CONTROL_FLAG_FIN) {
-      visitor_->OnStreamFrameData(control_frame_synreply->stream_id()
+      visitor_->OnStreamFrameData(control_frame_synreply->stream_id(),
                                   NULL, 0);
     }
 
