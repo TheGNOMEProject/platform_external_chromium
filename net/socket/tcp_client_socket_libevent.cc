@@ -558,7 +558,7 @@ void TCPClientSocketLibevent::LogConnectCompletion(int net_error) {
   };
   socklen_t addrlen = sizeof(source_address);
   int rv = getsockname(
-      ocket_, &source_address_generic, &addrlen);
+      socket_, &source_address_generic, &addrlen);
   if (rv != 0) {
     PLOG(ERROR) << "getsockname() [rv: " << rv << "] error: ";
     NOTREACHED();
